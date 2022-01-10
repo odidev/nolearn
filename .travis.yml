@@ -3,11 +3,14 @@ sudo: false
 branches:
   only:
     - master
-python:
-  - "3.8"
-arch: 
-     amd64
-     arm64
+matrix:
+   include:
+       - python: 3.8
+         dist: bionic
+       - python: 3.8
+         arch: arm64
+         dist: bionic
+         
 addons:
   apt:
     packages:
