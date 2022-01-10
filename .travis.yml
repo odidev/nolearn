@@ -21,8 +21,8 @@ addons:
 before_install:
   - pip install -U pip setuptools wheel
 install:
-  - travis_wait travis_retry pip install -r requirements.txt
-  - travis_retry pip install -e .[all]
+  - pip install -r requirements.txt
+  - pip install -e .[all]
   - mkdir -p ~/scikit_learn_data/mldata
   - wget -P ~/scikit_learn_data/mldata https://github.com/amplab/datascience-sp14/raw/master/lab7/mldata/mnist-original.mat
 script: py.test
